@@ -124,11 +124,11 @@ class PaginaController
 
             //Configurar SMTP
             $phpmailer->isSMTP();
-            $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+            $phpmailer->Host = $_ENV['EMAIL_HOST'];
             $phpmailer->SMTPAuth = true;
-            $phpmailer->Port = 465;
-            $phpmailer->Username = "c36436674bd767";
-            $phpmailer->Password = "7b8377a055add7";
+            $phpmailer->Port = $_ENV['EMAIL_PORT'];
+            $phpmailer->Username = $_ENV['EMAIL_USER'];
+            $phpmailer->Password = $_ENV['EMAIL_PASS'];
             $phpmailer->SMTPSecure = 'tls';
 
             //Quien ENVIA con setFROM y donde recibe en addAdrress
